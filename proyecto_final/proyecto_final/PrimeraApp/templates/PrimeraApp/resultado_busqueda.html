@@ -1,0 +1,47 @@
+{% extends 'PrimeraApp/base.html' %}
+
+{% block title %}Resultado de Búsqueda{% endblock title %}
+
+{% block main %}
+<section class="section">
+    <div class="container">
+        <h1>Resultado de Búsqueda</h1>
+        <h2>Perfiles encontrados:</h2>
+        {% for perfil in perfiles %}
+            <div class="perfil">
+                <h3>{{ perfil.nombre }}</h3>
+                <p>Apellido: {{ perfil.apellido }}</p>
+                <p>Email: {{ perfil.email }}</p>
+                <p>Nombre de usuario: {{ perfil.nombre_usuario }}</p>
+            </div>
+        {% empty %}
+            <p>No se encontraron perfiles.</p>
+        {% endfor %}
+
+        <h2>Posts encontrados:</h2>
+        {% for post in posts %}
+            <div class="post">
+                <h3>{{ post.titulo }}</h3>
+                <p>Autor: {{ post.autor }}</p>
+                <p>Contenido: {{ post.contenido }}</p>
+                <p>Fecha de publicación: {{ post.fecha_publicacion }}</p>
+            </div>
+        {% empty %}
+            <p>No se encontraron posts.</p>
+        {% endfor %}
+
+        <h2>Mensajes encontrados:</h2>
+        {% for mensaje in mensajes %}
+            <div class="mensaje">
+                <h3>Mensaje de {{ mensaje.emisor }}</h3>
+                <p>Receptor: {{ mensaje.receptor }}</p>
+                <p>Contenido: {{ mensaje.contenido }}</p>
+                <p>Fecha de envío: {{ mensaje.fecha_envio }}</p>
+            </div>
+        {% empty %}
+            <p>No se encontraron mensajes.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock main %}
+

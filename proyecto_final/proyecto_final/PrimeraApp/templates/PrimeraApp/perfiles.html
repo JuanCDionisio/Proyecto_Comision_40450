@@ -1,0 +1,15 @@
+{% extends 'PrimeraApp/base.html' %}
+
+{% block title %}Perfil{% endblock title %}
+
+{% block main %}
+<section class="section">
+    <div class="container">
+        <h1>Perfil</h1>
+        <p>Nombre: {{ perfil.nombre }}</p>
+        <p>Apellido: {{ perfil.apellido }}</p>
+        <p>Email: {{ perfil.email }}</p>
+        <p>Nombre de usuario: {{ perfil.nombre_usuario }}</p>
+    </div>
+</section>
+{% endblock main %}

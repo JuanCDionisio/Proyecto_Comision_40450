@@ -1,0 +1,15 @@
+{% extends 'PrimeraApp/base.html' %}
+
+{% block title %}Post{% endblock title %}
+
+{% block main %}
+<section class="section">
+    <div class="container">
+        <h1>Post</h1>
+        <p>Autor: {{ post.autor }}</p>
+        <p>Título: {{ post.titulo }}</p>
+        <p>Contenido: {{ post.contenido }}</p>
+        <p>Fecha de publicación: {{ post.fecha_publicacion }}</p>
+    </div>
+</section>
+{% endblock main %}

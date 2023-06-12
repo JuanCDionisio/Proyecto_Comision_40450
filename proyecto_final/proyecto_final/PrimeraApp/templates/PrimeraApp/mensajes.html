@@ -1,0 +1,15 @@
+{% extends 'PrimeraApp/base.html' %}
+
+{% block title %}Mensaje{% endblock title %}
+
+{% block main %}
+<section class="section">
+    <div class="container">
+        <h1>Mensaje</h1>
+        <p>Emisor: {{ mensaje.emisor }}</p>
+        <p>Receptor: {{ mensaje.receptor }}</p>
+        <p>Contenido: {{ mensaje.contenido }}</p>
+        <p>Fecha de envío: {{ mensaje.fecha_envio }}</p>
+    </div>
+</section>
+{% endblock main %}

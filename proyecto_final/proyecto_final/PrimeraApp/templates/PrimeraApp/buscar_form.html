@@ -1,0 +1,19 @@
+{% extends 'PrimeraApp/base.html' %}
+
+{% block title %}Buscar{% endblock title %}
+
+{% block main %}
+<section class="section">
+    <div class="container">
+        <h1>Buscar Formulario</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ buscar_form.as_p }}
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+</section>
+{% endblock main %}
+
+
+

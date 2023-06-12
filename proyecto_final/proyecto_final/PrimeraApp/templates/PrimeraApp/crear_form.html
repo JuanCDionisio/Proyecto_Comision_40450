@@ -1,0 +1,54 @@
+{% extends 'PrimeraApp/base.html' %}
+
+{% block title %}Agregar{% endblock title %}
+
+{% block main %}
+<section class="section">
+    <div class="container">
+        <h1>Creación</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ perfil_form.as_p }}
+            {% if perfil_form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in perfil_form.non_field_errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <button type="submit" name="perfil_submit">Guardar Perfil</button>
+        </form>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ post_form.as_p }}
+            {% if post_form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in post_form.non_field_errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <button type="submit" name="post_submit">Guardar Post</button>
+        </form>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ mensaje_form.as_p }}
+            {% if mensaje_form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in mensaje_form.non_field_errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <button type="submit" name="mensaje_submit">Guardar Mensaje</button>
+        </form>
+    </div>
+</section>
+{% endblock main %}
+
+
+
+
+
