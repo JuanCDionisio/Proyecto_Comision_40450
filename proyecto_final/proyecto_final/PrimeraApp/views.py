@@ -5,6 +5,9 @@ from .forms import PerfilForm, PostForm, MensajeForm, BuscarForm
 def inicio(request):
     return render(request, "PrimeraApp/index.html")
 
+def about(request):
+    return render(request, "PrimeraApp/about.html")
+
 def posteos(request):
     return render(request, "PrimeraApp/posts.html")
 
